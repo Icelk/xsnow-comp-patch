@@ -55,9 +55,9 @@ Library / Program | Ubuntu / Debian |  Arch
 ----------------- | --------------- | -------
      libx11       |   libx11-dev    | libx11
    libx11-xcb     | libx11-xcb-dev  | libxcb
-     libxt        |    libxt-dev    | libxext
+      libxt       |    libxt-dev    |  libxt
      libxpm       |   libxpm-dev    | libxpm
-     libxext      |   libxext-dev   |  libxt
+     libxext      |   libxext-dev   | libxext
       xmkmf       |   xutils-dev    |  imake
 
 
