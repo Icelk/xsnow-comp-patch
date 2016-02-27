@@ -115,7 +115,8 @@ copyright statement follows:
 > distributions, CD-Roms etc, and to make the necessary changes to
 > makefiles etc. to facilitate this.
 
-Please feel free to redistribute this patch however you like.
+Please feel free to redistribute this patch however you like. The code I have
+added falls under the MIT license, which is included in the patch.
 
 
 Contributing
