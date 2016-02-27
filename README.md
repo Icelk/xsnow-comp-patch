@@ -67,8 +67,11 @@ Installation
 With a Package
 --------------
 
-I'm working on an AUR package for Arch Linux. Until then, you'll have to build
-from source.
+### Arch Linux
+
+Install [`xsnow-comp-patch-git`][aur] from the AUR.
+
+[aur]:https://aur.archlinux.org/packages/xsnow-comp-patch-git/
 
 Building from Source
 --------------------
