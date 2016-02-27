@@ -78,27 +78,27 @@ Building from Source
 
 2. Save the latest version of xsnow-comp.patch from this repository.
 
-    mkdir -p /your/builds/xsnow-comp/
-    cd /your/builds/xsnow-comp/
-    git clone 'this-repository' patch/
+        mkdir -p /your/builds/xsnow-comp/
+        cd /your/builds/xsnow-comp/
+        git clone 'this-repository' patch/
 
 3. Download the latest version of xsnow from its homepage and unpack it:
 
-    wget 'http://dropmix.xs4all.nl/rick/Xsnow/xsnow-1.42.tar.gz'
-    tar -xzf xsnow-1.42.tar.gz
+        wget 'http://dropmix.xs4all.nl/rick/Xsnow/xsnow-1.42.tar.gz'
+        tar -xzf xsnow-1.42.tar.gz
 
 4. Change into the unpacked xsnow directory and apply the patch:
 
-    cd xsnow-1.42
-    cat ../patch/xsnow-comp.patch | patch -p1
+        cd xsnow-1.42
+        cat ../patch/xsnow-comp.patch | patch -p1
 
 5.  Run make and install:
 
-    xmkmf
-    make depend
-    make
-    sudo make install
-    sudo make install.man
+        xmkmf
+        make depend
+        make
+        sudo make install
+        sudo make install.man
 
 
 Licensing
@@ -107,6 +107,7 @@ Licensing
 Xsnow has not been released under an open source license, which is why I'm not
 hosting the full modified source code for xsnow-comp-patch. Rick Jansen's full
 copyright statement follows:
+
 
 > Xsnow is available freely and you may give it to other people as is,
 > but I retain all rights. Therefore it does not classify as 'Public
