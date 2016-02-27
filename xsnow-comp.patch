@@ -1105,7 +1105,7 @@ diff -rupN ./xsnow-1.42/Makefile xsnow-comp-tmp/Makefile
 - /usr/include/bits/stdio_lim.h
 diff -rupN ./xsnow-1.42/PATCH_LICENSE xsnow-comp-tmp/PATCH_LICENSE
 --- ./xsnow-1.42/PATCH_LICENSE	1969-12-31 19:00:00.000000000 -0500
-+++ xsnow-comp-tmp/PATCH_LICENSE	2016-02-27 17:39:57.018252793 -0500
++++ xsnow-comp-tmp/PATCH_LICENSE	2016-02-27 17:42:21.631140589 -0500
 @@ -0,0 +1,21 @@
 +The MIT License (MIT)
 +
@@ -1130,14 +1130,14 @@ diff -rupN ./xsnow-1.42/PATCH_LICENSE xsnow-comp-tmp/PATCH_LICENSE
 +SOFTWARE.
 diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
 --- ./xsnow-1.42/xsnow.c	2001-12-15 18:44:47.000000000 -0500
-+++ xsnow-comp-tmp/xsnow.c	2016-02-27 17:39:57.021586193 -0500
++++ xsnow-comp-tmp/xsnow.c	2016-02-27 17:42:21.634473989 -0500
 @@ -212,7 +212,8 @@
  	etc.
  */
  #define VERSION "Xsnow-1.42, December 14th 2001 by Rick Jansen (rja@euronet.nl)\n\
 -WWW: http://www.euronet.nl/~rja/Xsnow/\n"
 +WWW: http://www.euronet.nl/~rja/Xsnow/\n\
-+Compositor patch v1.00 http://github.com/protractorninja/xsnow-comp\n"
++Compositor patch v1 https://github.com/protractorninja/xsnow-comp-patch\n"
  
  #ifdef VMS
  #include <socket.h>
@@ -1465,7 +1465,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
 +/* vim: set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab : */
 diff -rupN ./xsnow-1.42/xsnow.hlp xsnow-comp-tmp/xsnow.hlp
 --- ./xsnow-1.42/xsnow.hlp	2000-12-19 15:26:36.000000000 -0500
-+++ xsnow-comp-tmp/xsnow.hlp	2016-02-27 17:39:57.021586193 -0500
++++ xsnow-comp-tmp/xsnow.hlp	2016-02-27 17:42:21.634473989 -0500
 @@ -99,6 +99,12 @@
   all windows, then specify this option. Symptom would be that no snow is
   kept on any window, but only at the screen bottom
@@ -1481,7 +1481,7 @@ diff -rupN ./xsnow-1.42/xsnow.hlp xsnow-comp-tmp/xsnow.hlp
  
 diff -rupN ./xsnow-1.42/xsnow.man xsnow-comp-tmp/xsnow.man
 --- ./xsnow-1.42/xsnow.man	2001-12-15 18:11:04.000000000 -0500
-+++ xsnow-comp-tmp/xsnow.man	2016-02-27 17:39:57.021586193 -0500
++++ xsnow-comp-tmp/xsnow.man	2016-02-27 17:42:21.634473989 -0500
 @@ -107,6 +107,12 @@ nature. If however, you use an Xserver t
  all windows, then specify this option. Symptom would be that no snow
  is kept on any window, but only at the screen bottom.
