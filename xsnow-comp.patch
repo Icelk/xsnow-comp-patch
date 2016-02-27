@@ -1,6 +1,6 @@
 diff -rupN ./xsnow-1.42/.gitignore xsnow-comp-tmp/.gitignore
 --- ./xsnow-1.42/.gitignore	1969-12-31 19:00:00.000000000 -0500
-+++ xsnow-comp-tmp/.gitignore	2016-02-26 20:50:59.080479329 -0500
++++ xsnow-comp-tmp/.gitignore	2016-02-27 14:50:46.802502042 -0500
 @@ -0,0 +1,5 @@
 +Makefile*
 +make*
@@ -1114,8 +1114,18 @@ diff -rupN ./xsnow-1.42/Makefile xsnow-comp-tmp/Makefile
 - /usr/include/bits/stdio_lim.h
 diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
 --- ./xsnow-1.42/xsnow.c	2001-12-15 18:44:47.000000000 -0500
-+++ xsnow-comp-tmp/xsnow.c	2016-02-26 20:50:59.083812727 -0500
-@@ -253,6 +253,7 @@ typedef int ErrorHandler();
++++ xsnow-comp-tmp/xsnow.c	2016-02-27 14:50:46.849169522 -0500
+@@ -212,7 +212,8 @@
+ 	etc.
+ */
+ #define VERSION "Xsnow-1.42, December 14th 2001 by Rick Jansen (rja@euronet.nl)\n\
+-WWW: http://www.euronet.nl/~rja/Xsnow/\n"
++WWW: http://www.euronet.nl/~rja/Xsnow/\n\
++Compositor patch v1.00 http://github.com/protractorninja/xsnow-comp\n"
+ 
+ #ifdef VMS
+ #include <socket.h>
+@@ -253,6 +254,7 @@ typedef int ErrorHandler();
  #endif
  Display *display;
  int screen;
@@ -1123,7 +1133,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  Window rootWin;
  char toon_message[TOON_MESSAGE_LENGTH] = "";
  Window Parent;
-@@ -272,6 +273,7 @@ int NoKeepSnow = 0;
+@@ -272,6 +274,7 @@ int NoKeepSnow = 0;
  int NoKeepSBot = 0;
  int NoKeepSWin = 0;
  int NoPopuphandling = 1;
@@ -1131,7 +1141,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  int NoWind = 0;
  unsigned int borderWidth = 0;
  int SnowOffset = 0;
-@@ -321,6 +323,7 @@ XRectangle AddRect;
+@@ -321,6 +324,7 @@ XRectangle AddRect;
  unsigned int RunCounter = 0;
  int SantaUpdateFactor = 3;
  /* Forward decls */
@@ -1139,7 +1149,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  void Usage();
  void SigHandler();
  void SigHupHandler();
-@@ -506,6 +509,9 @@ char *av[];
+@@ -506,6 +510,9 @@ char *av[];
  				printf("\nThis is %s\n\n", VERSION);
  				exit(0);
  			}
@@ -1149,7 +1159,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  			else {
  				Usage();
  			}
-@@ -553,10 +559,25 @@ char *av[];
+@@ -553,10 +560,25 @@ char *av[];
  		}
  		screen = DefaultScreen(display);
  		rootWin = ToonGetRootWindow(display, screen, &Parent);
@@ -1177,7 +1187,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  		center_x = display_width / 2;
  		center_y = display_height / 2;
  		current_snow_height = display_height;
-@@ -566,13 +587,13 @@ char *av[];
+@@ -566,13 +588,13 @@ char *av[];
  		}
  		for (flake=0; flake<=SNOWFLAKEMAXTYPE; flake++) {
  			rp = &snowPix[flake];
@@ -1193,7 +1203,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  						tp->tannenbaumBits, tp->width, tp->height);
  		InitSantaPixymaps();
  		redPix =   AllocNamedColor(redColor, black);
-@@ -581,21 +602,21 @@ char *av[];
+@@ -581,21 +603,21 @@ char *av[];
  		blackPix = AllocNamedColor(blackColor, black);
  		snowcPix = AllocNamedColor(snowColor, white);   
  		trPix = AllocNamedColor(trColor, black);
@@ -1219,7 +1229,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  				XCopyGC(display,gc,0,ClearSnowGC);
  				XSetForeground(display,ClearSnowGC, bgPix);
  			}
-@@ -608,13 +629,13 @@ char *av[];
+@@ -608,13 +630,13 @@ char *av[];
  			exit(1);
  		}
  		for (flake=0; flake<=SNOWFLAKEMAXTYPE; flake++) {
@@ -1235,7 +1245,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  		XCopyGC(display,gc,0,TreesGC);
  		XSetStipple(display, TreesGC, tannenbaumPix[0].pixmap);
  		XSetForeground(display,TreesGC,trPix);
-@@ -678,7 +699,7 @@ rc = MWR(1);
+@@ -678,7 +700,7 @@ rc = MWR(1);
  														ev.xconfigure.width,
  														ev.xconfigure.height,
  														ev.xconfigure.border_width,
@@ -1244,7 +1254,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  												);
  									printf("ConfigureNotify calling DDLT\n");
  									#endif
-@@ -772,7 +793,7 @@ rc = MWR(1);
+@@ -772,7 +794,7 @@ rc = MWR(1);
  		XDestroyRegion(PrevWr);
  		XDestroyRegion(WDR);
  		XDestroyRegion(rscrr);
@@ -1253,7 +1263,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  		XCloseDisplay(display);
  		exit(0);
  }		/* End of the snow */
-@@ -809,6 +830,7 @@ Usage()
+@@ -809,6 +831,7 @@ Usage()
  		USEPRT("       -nokeepsnowonwindows\n");
  		USEPRT("       -nokeepsnowonscreen\n");
  		USEPRT("       -nonopopup\n");
@@ -1261,7 +1271,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  		USEPRT("       -version\n\n");
  		USEPRT("Recommended: xsnow -bg SkyBlue3\n");
  		exit(1);
-@@ -827,7 +849,7 @@ SigHupHandler()
+@@ -827,7 +850,7 @@ SigHupHandler()
  	XSetForeground(display,FurGC,trPix);
  	XSetFillStyle(display,FurGC, FillSolid);
  	XSetRegion(display,FurGC,snscr);
@@ -1270,7 +1280,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  	XFlush(display);
  	signal(SIGHUP, Sig_Hup_ptr);
  }
-@@ -1002,7 +1024,7 @@ int rx;
+@@ -1002,7 +1025,7 @@ int rx;
  		Snow *snow;
  		snow = &snowflakes[rx];
  		XSetTSOrigin(display, SnowGC[snow->whatFlake], snow->intX, snow->intY);
@@ -1279,7 +1289,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  				 snow->intX, snow->intY,
  				 snowPix[snow->whatFlake].width, snowPix[snow->whatFlake].height);
  }
-@@ -1015,13 +1037,13 @@ int rx;
+@@ -1015,13 +1038,13 @@ int rx;
  		snow = &snowflakes[rx];
  	 
  		if (UseFillForClear) {
@@ -1295,7 +1305,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  								 snow->intX, snow->intY,
  								 snowPix[snow->whatFlake].width, 
  								 snowPix[snow->whatFlake].height,
-@@ -1050,7 +1072,7 @@ DrawTannenbaum(x,y)
+@@ -1050,7 +1073,7 @@ DrawTannenbaum(x,y)
  int x,y;
  {
  		XSetTSOrigin(display, TreesGC, x,y);
@@ -1304,7 +1314,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  				 x,y,
  				 tannenbaumPix[0].width, tannenbaumPix[0].height);
  }
-@@ -1065,49 +1087,49 @@ void InitSantaPixymaps()
+@@ -1065,49 +1088,49 @@ void InitSantaPixymaps()
  	switch (SantaSize) {
  		case 0:
  			if (!Rudolf) {
@@ -1378,7 +1388,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  				sscanf(*BigSantaRudolf1,"%d %d", &SantaWidth,&SantaHeight);
  			}
  		break;
-@@ -1196,7 +1218,7 @@ DrawSanta() {
+@@ -1196,7 +1219,7 @@ DrawSanta() {
  											SantaX,SantaY);
  	rc = XCopyArea(			display,
  											SantaPixmap[CurrentSanta],
@@ -1387,7 +1397,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  											gc,
  											0,0,SantaWidth,SantaHeight,
  											SantaX,SantaY);
-@@ -1209,7 +1231,7 @@ DrawSanta() {
+@@ -1209,7 +1232,7 @@ DrawSanta() {
  void
  EraseSanta()
  {
@@ -1396,7 +1406,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  						 SantaX , SantaY,     
  						 SantaWidth,SantaHeight,
  						 False);
-@@ -1245,6 +1267,17 @@ Pixel dfltPix;
+@@ -1245,6 +1268,17 @@ Pixel dfltPix;
  	return pix;
  }
  /* ------------------------------------------------------------------ */ 
@@ -1414,7 +1424,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  void sig_alarm()
  {
  		int rand=RandInt(100);
-@@ -1405,7 +1438,7 @@ int DDLT() {
+@@ -1405,7 +1439,7 @@ int DDLT() {
  		printf("DDLT: diffR: (%d,%d,%d,%d)\n",
  						DiffRect.x,DiffRect.y,DiffRect.x+DiffRect.width,DiffRect.y+DiffRect.height); 
  		#endif
@@ -1423,7 +1433,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  	             				DiffRect.x,
  	             				DiffRect.y,
  	             				DiffRect.width,              
-@@ -1470,7 +1503,7 @@ int ClearX, ClearY;
+@@ -1470,7 +1504,7 @@ int ClearX, ClearY;
  		#if debug
  		printf("HEAr: clearing (%d,%d,%d,%d)\n", AddX,AddY,AddRect.width,AddRect.height);
  		#endif
@@ -1432,14 +1442,14 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
  	             AddX,
  	             AddY,
  	             AddRect.width,              
-@@ -1479,3 +1512,4 @@ int ClearX, ClearY;
+@@ -1479,3 +1513,4 @@ int ClearX, ClearY;
  	  XSubtractRegion(snscr,SubR, snscr);
  	XDestroyRegion(SubR);
  }
 +/* vim: set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab : */
 diff -rupN ./xsnow-1.42/xsnow.hlp xsnow-comp-tmp/xsnow.hlp
 --- ./xsnow-1.42/xsnow.hlp	2000-12-19 15:26:36.000000000 -0500
-+++ xsnow-comp-tmp/xsnow.hlp	2016-02-26 20:50:59.083812727 -0500
++++ xsnow-comp-tmp/xsnow.hlp	2016-02-27 14:50:46.849169522 -0500
 @@ -99,6 +99,12 @@
   all windows, then specify this option. Symptom would be that no snow is
   kept on any window, but only at the screen bottom
@@ -1455,7 +1465,7 @@ diff -rupN ./xsnow-1.42/xsnow.hlp xsnow-comp-tmp/xsnow.hlp
  
 diff -rupN ./xsnow-1.42/xsnow.man xsnow-comp-tmp/xsnow.man
 --- ./xsnow-1.42/xsnow.man	2001-12-15 18:11:04.000000000 -0500
-+++ xsnow-comp-tmp/xsnow.man	2016-02-26 20:50:59.083812727 -0500
++++ xsnow-comp-tmp/xsnow.man	2016-02-27 14:50:46.849169522 -0500
 @@ -107,6 +107,12 @@ nature. If however, you use an Xserver t
  all windows, then specify this option. Symptom would be that no snow
  is kept on any window, but only at the screen bottom.
