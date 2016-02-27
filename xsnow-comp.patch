@@ -1103,9 +1103,34 @@ diff -rupN ./xsnow-1.42/Makefile xsnow-comp-tmp/Makefile
 - /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
 - /usr/include/bits/wchar.h /usr/include/gconv.h \
 - /usr/include/bits/stdio_lim.h
+diff -rupN ./xsnow-1.42/PATCH_LICENSE xsnow-comp-tmp/PATCH_LICENSE
+--- ./xsnow-1.42/PATCH_LICENSE	1969-12-31 19:00:00.000000000 -0500
++++ xsnow-comp-tmp/PATCH_LICENSE	2016-02-27 17:39:57.018252793 -0500
+@@ -0,0 +1,21 @@
++The MIT License (MIT)
++
++Copyright (c) 2016 Austin Anderson
++
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
 diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
 --- ./xsnow-1.42/xsnow.c	2001-12-15 18:44:47.000000000 -0500
-+++ xsnow-comp-tmp/xsnow.c	2016-02-27 14:52:52.304692665 -0500
++++ xsnow-comp-tmp/xsnow.c	2016-02-27 17:39:57.021586193 -0500
 @@ -212,7 +212,8 @@
  	etc.
  */
@@ -1440,7 +1465,7 @@ diff -rupN ./xsnow-1.42/xsnow.c xsnow-comp-tmp/xsnow.c
 +/* vim: set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab : */
 diff -rupN ./xsnow-1.42/xsnow.hlp xsnow-comp-tmp/xsnow.hlp
 --- ./xsnow-1.42/xsnow.hlp	2000-12-19 15:26:36.000000000 -0500
-+++ xsnow-comp-tmp/xsnow.hlp	2016-02-27 14:52:52.304692665 -0500
++++ xsnow-comp-tmp/xsnow.hlp	2016-02-27 17:39:57.021586193 -0500
 @@ -99,6 +99,12 @@
   all windows, then specify this option. Symptom would be that no snow is
   kept on any window, but only at the screen bottom
@@ -1456,7 +1481,7 @@ diff -rupN ./xsnow-1.42/xsnow.hlp xsnow-comp-tmp/xsnow.hlp
  
 diff -rupN ./xsnow-1.42/xsnow.man xsnow-comp-tmp/xsnow.man
 --- ./xsnow-1.42/xsnow.man	2001-12-15 18:11:04.000000000 -0500
-+++ xsnow-comp-tmp/xsnow.man	2016-02-27 14:52:52.304692665 -0500
++++ xsnow-comp-tmp/xsnow.man	2016-02-27 17:39:57.021586193 -0500
 @@ -107,6 +107,12 @@ nature. If however, you use an Xserver t
  all windows, then specify this option. Symptom would be that no snow
  is kept on any window, but only at the screen bottom.
