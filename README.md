@@ -12,7 +12,7 @@ nicely with manual WM setups that use a standalone compositor like compton.
 How it works
 ============
 
-Xsnow draws on the X Window System's root window, which compton obscures.  The
+xsnow draws on the X Window System's root window, which compton obscures.  The
 patched version creates a new bottom-level window and draws on it instead, but
 only if it detects a running compositor or if xsnow is invoked with the
 `-nouseroot` flag. The new window uses pure 32-bit black as a background color,
@@ -26,9 +26,9 @@ when xsnow terminates.
 Known Bugs
 ==========
 
-- Xsnow's color environment has changed to 32-bit, which appears to be
-incompatible with santa's pixmaps. For now, Santa is automatically disabled
-if running with a compositor or `-nouseroot`.
+- The patch changes xsnow's color environment to 32-bit, which appears to be
+incompatible with Santa's pixmaps. For now, Santa is automatically disabled if
+running with a compositor or `-nouseroot`.
 
 
 Compatibility
@@ -121,6 +121,6 @@ Please feel free to redistribute this patch however you like.
 Contributing
 ============
 
-Once you apply the patch to Xsnow, you'll have my development environment. If
+Once you apply the patch to xsnow, you'll have my development environment. If
 you want to contribute, you can file a pull request on GitHub or send patches
 to austin@angerson.org.
