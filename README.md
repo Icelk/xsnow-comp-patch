@@ -22,6 +22,8 @@ You may want to use the `-nouseroot` flag if you want xsnow to have
 a background color, but you don't want your background to retain that color
 when xsnow terminates.
 
+The new window has a class and classname of `xsnow`.
+
 
 Known Bugs
 ==========
@@ -29,6 +31,7 @@ Known Bugs
 - The patch changes xsnow's color environment to 32-bit, which appears to be
 incompatible with Santa's pixmaps. For now, Santa is automatically disabled if
 running with a compositor or `-nouseroot`.
+- Trees still work by coincidence, but they're covered in snow.
 
 
 Compatibility
