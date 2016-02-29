@@ -31,7 +31,8 @@ Known Bugs
 - The patch changes xsnow's color environment to 32-bit, which appears to be
 incompatible with Santa's pixmaps. For now, Santa is automatically disabled if
 running with a compositor or `-nouseroot`.
-- Trees still work by coincidence, but they're covered in snow.
+- The patch can bump up the X server's CPU usage by as much as 8 percentage
+points. This may be unfixable unless I can find another workaround.
 
 
 Compatibility
@@ -40,11 +41,12 @@ Compatibility
 I have not tested the patch extensively. Please let me know if it works for
 your setup.
 
-My testing shows that xsnow-comp-patch works with:
+Testing shows that xsnow-comp-patch works with:
 
 - bspwm + compton
-- i3 + compton
+- i3/-gaps + compton
 - fluxbox + compton
+- xmonad + compton
 
 But doesn't work with:
 
