@@ -28,11 +28,14 @@ The new window has a class and classname of `xsnow`.
 Known Bugs
 ==========
 
-- The patch changes xsnow's color environment to 32-bit, which appears to be
+- The patch relies on some inefficient magic to show the snow, so running xsnow
+with the patch can **increase Xorg's CPU usage by up to 8 percentage points and
+increase compton's by up to 4.** Fixing this may be impossible.
+- The patch also changes xsnow's color environment to 32-bit, which appears to be
 incompatible with Santa's pixmaps. For now, Santa is automatically disabled if
 running with a compositor or `-nouseroot`.
-- The patch can bump up the X server's CPU usage by as much as 8 percentage
-points. This may be unfixable unless I can find another workaround.
+- The patched version is greedy and breaks `wew` (from wmutils/opt)'s XCB_ENTER_NOTIFY
+notifications. See issue #1.
 
 
 Compatibility
