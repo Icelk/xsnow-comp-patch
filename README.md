@@ -1,6 +1,8 @@
 xsnow-comp-patch: Compositor-Friendly Patch for Xsnow
 =====================================================
 
+**Looking for a new owner for this repo & the [AUR package][aur]; contact pn@angerson.org**
+
 ![the patch in action](screenshot.png)
 
 This is a patch that teaches [Rick Jansen's Xsnow 1.42][xsnow] how to play
@@ -135,4 +137,4 @@ Contributing
 
 Once you apply the patch to xsnow, you'll have my development environment. If
 you want to contribute, you can file a pull request on GitHub or send patches
-to austin@angerson.org.
+to pn@angerson.org.
