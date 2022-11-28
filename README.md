@@ -1,12 +1,10 @@
 xsnow-comp-patch: Compositor-Friendly Patch for Xsnow
 =====================================================
 
-**Looking for a new owner for this repo & the [AUR package][aur]; contact pn@angerson.org**
-
 ![the patch in action](screenshot.png)
 
 This is a patch that teaches [Rick Jansen's Xsnow 1.42][xsnow] how to play
-nicely with manual WM setups that use a standalone compositor like compton.
+nicely with manual WM setups that use a standalone compositor like picom.
 
 [xsnow]:http://dropmix.xs4all.nl/rick/Xsnow/
 
@@ -14,7 +12,7 @@ nicely with manual WM setups that use a standalone compositor like compton.
 How it works
 ============
 
-xsnow draws on the X Window System's root window, which compton obscures.  The
+xsnow draws on the X Window System's root window, which picom obscures.  The
 patched version creates a new bottom-level window and draws on it instead, but
 only if it detects a running compositor or if xsnow is invoked with the
 `-nouseroot` flag. The new window uses pure 32-bit black as a background color,
@@ -32,7 +30,7 @@ Known Bugs
 
 - The patch relies on some inefficient magic to show the snow, so running xsnow
 with the patch can **increase Xorg's CPU usage by up to 8 percentage points and
-increase compton's by up to 4.** Fixing this may be impossible.
+increase compton/picom's by up to 4.** Fixing this may be impossible.
 - The patch also changes xsnow's color environment to 32-bit, which appears to be
 incompatible with Santa's pixmaps. For now, Santa is automatically disabled if
 running with a compositor or `-nouseroot`.
@@ -48,10 +46,10 @@ your setup.
 
 Testing shows that xsnow-comp-patch works with:
 
-- bspwm + compton
-- i3/-gaps + compton
-- fluxbox + compton
-- xmonad + compton
+- bspwm + compton/picom
+- i3/-gaps + compton/picom
+- fluxbox + compton/picom
+- xmonad + compton/picom
 
 But doesn't work with:
 
@@ -132,9 +130,15 @@ Please feel free to redistribute this patch however you like. The code I have
 added falls under the MIT license, which is included in the patch.
 
 
+Previous developers
+============
+
+pn@angerson.org: Original author
+Icelk: Maintainer
+
+
 Contributing
 ============
 
 Once you apply the patch to xsnow, you'll have my development environment. If
-you want to contribute, you can file a pull request on GitHub or send patches
-to pn@angerson.org.
+you want to contribute, you can file a pull request on GitHub.
